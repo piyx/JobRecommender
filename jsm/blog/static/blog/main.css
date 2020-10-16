@@ -35,6 +35,7 @@ ul {
 }
 
 .content-section {
+    margin: 100;
     background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
