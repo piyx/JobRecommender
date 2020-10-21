@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -9,6 +9,8 @@ from django.views.generic import (
 )
 from .models import Post
 from django.contrib.auth.models import User
+from .forms import JobSearchForm
+from django.urls import reverse
 # Create your views here.
 
 
@@ -18,6 +20,25 @@ from django.contrib.auth.models import User
 #         'posts': Post.objects.all()
 #     }
 #     return render(request, 'blog/home.html', context)
+
+def job_search(request):
+    print("hello")
+    if request.method == "POST":
+        form = JobSearchForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            job_title = data['job_title']
+            location = data['location']
+            redirect(
+                f'job-results/{job_title}/{location}', kwargs={'bar': data})
+            return redirect('job-results')
+    else:
+        form = JobSearchForm()
+    return render(request, 'blog/job_page.html', {'form': form})
+
+
+def job_result(request):
+    return render(request, 'blog/job_results.html')
 
 
 class PostListView(LoginRequiredMixin, ListView):
