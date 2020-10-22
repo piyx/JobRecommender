@@ -3,4 +3,17 @@
 {% block content %}
 <h1>Hello</h1>
 <h2>{{ request.session.query }}</h2>
+{% for res, val in results.items %}
+<div class="card">
+    <div class="card-header">
+        {{val.company}} {{ val.location }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ val.title }}</h5>
+        <p class="card-text">{{ val.summary }}</p>
+        <a href="{{ val.url }}" class="btn btn-primary">Apply</a>
+    </div>
+</div>
+<hr>
+{% endfor %}
 {% endblock content %}

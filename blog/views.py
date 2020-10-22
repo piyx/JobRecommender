@@ -11,6 +11,7 @@ from .models import Post
 from django.contrib.auth.models import User
 from .forms import JobSearchForm
 from django.urls import reverse
+from utils.search import get_job_list
 # Create your views here.
 
 
@@ -29,16 +30,17 @@ def job_search(request):
             data = form.cleaned_data
             job_title = data['job_title']
             location = data['location']
-            redirect(
-                f'job-results/{job_title}/{location}', kwargs={'bar': data})
-            return redirect('job-results')
+            print(job_title, location)
+            return redirect(f'/job_results/{job_title}/{location}')
     else:
         form = JobSearchForm()
     return render(request, 'blog/job_page.html', {'form': form})
 
 
-def job_result(request):
-    return render(request, 'blog/job_results.html')
+def job_result(request, job_title, location):
+    results = get_job_list(job_title, location)
+    print(results)
+    return render(request, 'blog/job_results.html', {'results': results})
 
 
 class PostListView(LoginRequiredMixin, ListView):
