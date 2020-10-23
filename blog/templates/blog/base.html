@@ -37,12 +37,32 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                        <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">logout</a>
+                        <a class="nav-item nav-link" href="{% url 'profile' %}">
+                            <button class="btn btn-light" style="color: #593e7c">
+                                Profile
+                            </button>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'post-create' %}">
+                            <button class="btn btn-light" style="color: #593e7c">
+                                New Post
+                            </button>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">
+                            <button class="btn btn-light" style="color: #593e7c">
+                                Logout
+                            </button>
+                        </a>
                         {% else %}
-                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                        <a class="nav-item nav-link" href="{% url 'login' %}">
+                            <button class="btn btn-light" style="color: #593e7c">
+                                Login
+                            </button>
+                        </a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">
+                            <button class="btn btn-light" style="color: #593e7c">
+                                Register
+                            </button>
+                        </a>
                         {% endif %}
                     </div>
                 </div>

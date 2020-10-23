@@ -1,13 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>Hello</h1>
-<h2>{{ request.session.query }}</h2>
+{% if not results %}
+<h2>No results found!</h2>
+{% else %}
 {% for res, val in results.items %}
 <div class="card">
-    <div class="card-header">
-        {{val.company}} {{ val.location }}
-    </div>
+    <h5 class="card-header">{{val.company}} {{ val.location }}</h5>
     <div class="card-body">
         <h5 class="card-title">{{ val.title }}</h5>
         <p class="card-text">{{ val.summary }}</p>
@@ -16,4 +15,5 @@
 </div>
 <hr>
 {% endfor %}
+{% endif %}
 {% endblock content %}
