@@ -22,6 +22,13 @@ from utils.search import get_job_list
 #     }
 #     return render(request, 'blog/home.html', context)
 
+
+def home(request):
+    if request.user.is_authenticated:
+        return redirect('/')
+    return render(request, "blog/prehome.html")
+
+
 def job_search(request):
     print("hello")
     if request.method == "POST":

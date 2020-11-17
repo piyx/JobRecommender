@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        body {
+            background-color: #9894db;
+        }
+    </style>
+    <div id="homecards" style="display: flex; flex-direction: column; align-content: center; align-items: center; margin-top: 250px;">
+        <div class="row" style="width: 1000px;">
+            <div class="col-sm-6">
+              <div class="card" style="color: white; background-color: #f3c48d; display: flex; flex-direction: row;">
+                <div style="float: left; padding: 20px;">
+                    <h5 class="card-title">Looking for a job?</h5>
+                    <p class="card-text">Connect with friends and recruiters.</p>
+                    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+                </div>
+                <div>
+                    <img src="media/1.png" style="max-width: 70%; float: right;"></img>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card" style="color: white; background-color: #96dcce; display: flex; flex-direction: row; height: 230px;">
+                  <div>
+                  <img src="media/2.png" style="max-width: 100%;"></img>
+                  </div>
+                  <div style="float: left; padding: 20px;">
+                    <h5 class="card-title">RECRUIT</h5>
+                    <p class="card-text">Looking for passionate people?</p>
+                    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
