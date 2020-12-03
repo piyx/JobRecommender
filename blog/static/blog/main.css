@@ -15,12 +15,6 @@ h6 {
   color: #444444;
 }
 
-.container {
-  /* margin-left: 200px; */
-  display: flex;
-  flex-direction: row;
-}
-
 ul {
   margin: 0;
 }
