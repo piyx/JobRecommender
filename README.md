@@ -1,2 +1,2 @@
-# job-recommender-social-media
+# JobRecommender
 A social media platform for recommending jobs.
