@@ -1,2 +1,2 @@
-# JobRecommender
-A social media platform for recommending jobs.
+# JobSocialMedia
+A social media platform for employees and employers.
